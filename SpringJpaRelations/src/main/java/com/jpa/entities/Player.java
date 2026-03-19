@@ -1,0 +1,39 @@
+package com.jpa.entities;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "player")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Player {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
+
+    @Column(nullable = false)
+    private String nationality;
+
+    @Column(nullable = false)
+    private Integer age;
+
+    @Column(nullable = false)
+    private String position;
+
+    @ManyToOne(targetEntity = Club.class)
+    @JoinColumn(name = "id_club")
+    private Club club;
+}

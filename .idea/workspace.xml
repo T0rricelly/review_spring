@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2e788907-8f95-4156-877f-d082963f5f6c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/SpringMvc/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/main/java/com/mvc/SpringMvc/ControladorInicio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/main/java/com/mvc/SpringMvc/SpringMvcApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/main/java/com/mvc/SpringMvc/controller/PersonaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/main/java/com/mvc/SpringMvc/entities/Persona.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/main/java/com/mvc/SpringMvc/repository/PersonaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/main/java/com/mvc/SpringMvc/service/PersonaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/main/java/com/mvc/SpringMvc/service/impl/PersonaServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/main/resources/templates/persona.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMvc/src/test/java/com/mvc/SpringMvc/SpringMvcApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/src/main/java/com/review/SpringThymeleaf/ControladorInicio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/src/main/java/com/review/SpringThymeleaf/SpringThymeleafApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringThymeleaf/src/test/java/com/review/SpringThymeleaf/SpringThymeleafApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="3B6K9PilIO1QhX2VOSArBwJtpkv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e788907-8f95-4156-877f-d082963f5f6c" name="Changes" comment="" />
+      <created>1773803929429</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773803929429</updated>
+      <workItem from="1773803931356" duration="13000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
