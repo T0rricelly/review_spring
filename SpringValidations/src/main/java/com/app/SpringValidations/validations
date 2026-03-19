@@ -1,0 +1,9 @@
+@NotNull = El campo no debe ser nulo
+@NotBlank = El campo no debe ser nulo y que no este vacio
+@NotEmpty = Valida que la lista no este vacia
+@Min = Valida que el campo tenga un valor mayor o igual al especificado
+@Max = Se usa para limitar el valor numerico maximo de campo
+@Size = Valida la cantidad de caracteres
+@Pattern = Valida Strings con expresiones regulares
+@Email = Valida correos electronicos
+@Digits =
