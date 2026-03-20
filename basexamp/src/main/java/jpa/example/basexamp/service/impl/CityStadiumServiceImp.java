@@ -1,5 +1,6 @@
 package jpa.example.basexamp.service.impl;
 
+import jakarta.transaction.Transactional;
 import jpa.example.basexamp.entity.CityStadium;
 import jpa.example.basexamp.repository.CityStadiumRepository;
 import jpa.example.basexamp.service.CityStadiumService;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Transactional
 public class CityStadiumServiceImp implements CityStadiumService {
     // Inyeccion de CityStadiumRepository
     private final CityStadiumRepository cityStadiumRepository;

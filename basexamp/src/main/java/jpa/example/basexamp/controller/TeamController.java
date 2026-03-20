@@ -1,5 +1,6 @@
 package jpa.example.basexamp.controller;
 
+import jakarta.validation.Valid;
 import jpa.example.basexamp.service.impl.TeamServiceImp;
 import jpa.example.basexamp.service.dto.TeamDto;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class TeamController {
     }
 
     @GetMapping
-    public ResponseEntity<List<TeamDto>> getAll(){
+    public ResponseEntity<List<TeamDto>> getAll() {
         return ResponseEntity.ok(this.teamService.getAll());
     }
 
@@ -31,19 +32,13 @@ public class TeamController {
     }
 
     @PostMapping
-    public ResponseEntity<TeamDto> save(@RequestBody TeamDto teamDto) {
-        if (teamDto.getId() == null || !this.teamService.exist(teamDto.getId())) {
-            return ResponseEntity.status(HttpStatus.CREATED).body(this.teamService.save(teamDto));
-        }
-        return ResponseEntity.badRequest().build();
+    public ResponseEntity<TeamDto> save(@RequestBody @Valid TeamDto teamDto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.teamService.save(teamDto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody TeamDto teamDto) {
-        if (teamDto.getId() != null && this.teamService.exist(id)) {
-            return ResponseEntity.ok().body(this.teamService.update(id, teamDto));
-        }
-        return ResponseEntity.badRequest().body("No se ha encontrado");
+    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid TeamDto teamDto) {
+        return ResponseEntity.ok().body(this.teamService.update(id, teamDto));
     }
 
     @DeleteMapping("/{id}")

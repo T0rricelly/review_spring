@@ -1,6 +1,5 @@
 package com.app.SpringValidations.service.dto;
 
-import com.app.SpringValidations.advice.validation.anotation.ValidName;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

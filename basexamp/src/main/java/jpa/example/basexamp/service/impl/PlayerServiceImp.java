@@ -1,5 +1,6 @@
 package jpa.example.basexamp.service.impl;
 
+import jakarta.transaction.Transactional;
 import jpa.example.basexamp.entity.Player;
 import jpa.example.basexamp.repository.PlayerRepository;
 import jpa.example.basexamp.service.PlayerService;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Transactional
 public class PlayerServiceImp implements PlayerService {
     // Inyeccion de PlayerRepsoitory
     private final PlayerRepository playerRepository;

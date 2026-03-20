@@ -1,5 +1,6 @@
 package jpa.example.basexamp.controller;
 
+import jakarta.validation.Valid;
 import jpa.example.basexamp.entity.CityStadium;
 import jpa.example.basexamp.service.dto.CityDto;
 import jpa.example.basexamp.service.impl.CityStadiumServiceImp;
@@ -29,12 +30,12 @@ public class CityStadiumController {
     }
 
     @PostMapping
-    public ResponseEntity<CityDto> save(@RequestBody CityDto cityDto) {
+    public ResponseEntity<CityDto> save(@RequestBody @Valid CityDto cityDto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.cityStadiumService.save(cityDto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody CityDto cityDto) {
+    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid CityDto cityDto) {
         return ResponseEntity.ok(this.cityStadiumService.update(id, cityDto));
     }
 

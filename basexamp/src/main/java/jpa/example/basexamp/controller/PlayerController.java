@@ -1,5 +1,6 @@
 package jpa.example.basexamp.controller;
 
+import jakarta.validation.Valid;
 import jpa.example.basexamp.service.impl.PlayerServiceImp;
 import jpa.example.basexamp.service.dto.PlayerDto;
 import org.springframework.http.HttpStatus;
@@ -32,15 +33,13 @@ public class PlayerController {
     }
 
     @PostMapping
-    public ResponseEntity<PlayerDto> save(@RequestBody PlayerDto playerDto) {
-        if (playerDto.getId() == null || !this.playerService.exist(playerDto.getId())) {
-            return ResponseEntity.status(HttpStatus.CREATED).body(this.playerService.save(playerDto));
-        }
-        return ResponseEntity.badRequest().build();
+    public ResponseEntity<PlayerDto> save(@RequestBody @Valid PlayerDto playerDto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.playerService.save(playerDto));
+
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody PlayerDto playerDto) {
+    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid PlayerDto playerDto) {
         if (playerDto.getId() != null && this.playerService.exist(playerDto.getId())) {
             return ResponseEntity.ok(this.playerService.update(id, playerDto));
         }

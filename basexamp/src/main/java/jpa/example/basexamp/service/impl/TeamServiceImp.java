@@ -1,5 +1,6 @@
 package jpa.example.basexamp.service.impl;
 
+import jakarta.transaction.Transactional;
 import jpa.example.basexamp.entity.Team;
 import jpa.example.basexamp.repository.TeamRepository;
 import jpa.example.basexamp.service.TeamService;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Transactional
 public class TeamServiceImp implements TeamService {
     private final TeamRepository teamRepository;
     private final TeamMapper teamMapper;

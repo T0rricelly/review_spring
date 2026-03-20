@@ -1,5 +1,6 @@
 package jpa.example.basexamp.controller;
 
+import jakarta.validation.Valid;
 import jpa.example.basexamp.entity.Stadium;
 import jpa.example.basexamp.service.dto.StadiumDto;
 import jpa.example.basexamp.service.dto.TeamDto;
@@ -34,23 +35,21 @@ public class StadiumController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@RequestBody StadiumDto stadiumDto) {
-        if (stadiumDto.getId() == null || !this.stadiumService.exist(stadiumDto.getId())) {
-            return ResponseEntity.status(HttpStatus.CREATED).body(this.stadiumService.save(stadiumDto));
-        }
-            return ResponseEntity.badRequest().build();
+    public ResponseEntity<?> save(@RequestBody @Valid StadiumDto stadiumDto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.stadiumService.save(stadiumDto));
+
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody StadiumDto stadiumDto){
-        if (stadiumDto != null && this.stadiumService.exist(stadiumDto.getId())){
+    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid StadiumDto stadiumDto) {
+        if (stadiumDto != null && this.stadiumService.exist(stadiumDto.getId())) {
             return ResponseEntity.ok(this.stadiumService.update(id, stadiumDto));
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteById(@PathVariable Integer id){
+    public ResponseEntity<?> deleteById(@PathVariable Integer id) {
         return ResponseEntity.ok(this.stadiumService.deleteById(id));
     }
 
