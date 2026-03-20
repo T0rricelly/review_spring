@@ -1,5 +1,6 @@
 package com.app.SpringValidations.service.dto;
 
+import com.app.SpringValidations.advice.validation.anotation.ValidName;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,6 +30,8 @@ public class EmployeeDto {
     @Max(65)
     private Byte age;
     private boolean married;
+    @Digits(integer = 1, fraction = 2)
     private double height;
+    @Past
     private LocalDate dateOfBirth;
 }

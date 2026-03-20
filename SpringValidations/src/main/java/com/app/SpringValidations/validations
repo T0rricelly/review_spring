@@ -6,4 +6,9 @@
 @Size = Valida la cantidad de caracteres
 @Pattern = Valida Strings con expresiones regulares
 @Email = Valida correos electronicos
-@Digits =
+@Digits = Valida la cantidad de digitos enteros y la cantidad de digitos fraccionarios
+@Past = Valida que una fecha sea anterior al momento actual
+@Future = Valida que una fecha sea posterior a la actual
+@AssertTrue = Valida que el campo sea true
+@AssertFalse = Valida que el campo sea false
+@CreditCardNumber = Valida los numeros de tarjetas bancarias
