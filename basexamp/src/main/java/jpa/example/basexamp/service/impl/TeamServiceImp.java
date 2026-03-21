@@ -1,6 +1,7 @@
 package jpa.example.basexamp.service.impl;
 
 import jakarta.transaction.Transactional;
+import jpa.example.basexamp.advice.exceptions.ResourceNotFoundException;
 import jpa.example.basexamp.entity.Team;
 import jpa.example.basexamp.repository.TeamRepository;
 import jpa.example.basexamp.service.TeamService;
@@ -26,11 +27,7 @@ public class TeamServiceImp implements TeamService {
     }
 
     public TeamDto getById(Integer id) {
-        return this.teamMapper.toTeamDto(this.teamRepository.findById(id).orElse(null));
-    }
-
-    public Boolean exist(Integer id){
-        return this.teamRepository.existsById(id);
+        return this.teamMapper.toTeamDto(this.teamRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro el equipo con el id " + id)));
     }
 
     public TeamDto save(TeamDto teamDto){
@@ -45,7 +42,7 @@ public class TeamServiceImp implements TeamService {
     }
 
     public TeamDto delete(Integer id){
-        Team team = this.teamRepository.findById(id).orElse(null);
+        Team team = this.teamRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro un jugador con el id " + id));
         TeamDto teamDto = this.teamMapper.toTeamDto(team);
         this.teamRepository.deleteById(id);
         return teamDto;

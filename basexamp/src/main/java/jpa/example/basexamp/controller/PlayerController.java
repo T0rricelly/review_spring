@@ -26,10 +26,7 @@ public class PlayerController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable Integer id) {
-        if (this.playerService.exist(id)) {
-            return ResponseEntity.ok(this.playerService.getById(id));
-        }
-        return ResponseEntity.badRequest().body("No se encontro");
+        return ResponseEntity.ok(this.playerService.getById(id));
     }
 
     @PostMapping
@@ -40,18 +37,12 @@ public class PlayerController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid PlayerDto playerDto) {
-        if (playerDto.getId() != null && this.playerService.exist(playerDto.getId())) {
-            return ResponseEntity.ok(this.playerService.update(id, playerDto));
-        }
-        return ResponseEntity.badRequest().body("No se encontro");
+        return ResponseEntity.ok(this.playerService.update(id, playerDto));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id) {
-        if (this.playerService.exist(id)) {
-            return ResponseEntity.ok(this.playerService.delete(id));
-        }
-        return ResponseEntity.badRequest().body("No se encontro");
+        return ResponseEntity.ok(this.playerService.delete(id));
     }
 
 }

@@ -1,5 +1,8 @@
 package jpa.example.basexamp.advice;
 
+import jpa.example.basexamp.advice.exceptions.ResourceNotFoundException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -17,6 +20,12 @@ public class GlobalErrorHandler {
             errors.put(e.getField(),e.getDefaultMessage());
         });
         return errors;
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<String> notFound(ResourceNotFoundException exception){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+
     }
 
 }

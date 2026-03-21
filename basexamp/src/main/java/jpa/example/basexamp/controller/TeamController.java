@@ -25,10 +25,7 @@ public class TeamController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable Integer id) {
-        if (this.teamService.exist(id)) {
-            return ResponseEntity.ok(this.teamService.getById(id));
-        }
-        return ResponseEntity.badRequest().body("No se encontro");
+        return ResponseEntity.ok(this.teamService.getById(id));
     }
 
     @PostMapping
@@ -43,9 +40,6 @@ public class TeamController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<TeamDto> deleteById(@PathVariable Integer id) {
-        if (this.teamService.exist(id)) {
-            return ResponseEntity.ok().body(this.teamService.delete(id));
-        }
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok().body(this.teamService.delete(id));
     }
 }

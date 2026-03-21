@@ -17,7 +17,7 @@ import lombok.Setter;
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(nullable = false)
+    @Column(nullable = false)
     private Integer id;
 
     @Column(nullable = false)

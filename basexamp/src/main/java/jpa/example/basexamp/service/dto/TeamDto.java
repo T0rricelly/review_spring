@@ -12,7 +12,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TeamDto {
+
     private Integer id;
+
     @NotBlank
     @Size(max = 30)
     private String nameTeam;

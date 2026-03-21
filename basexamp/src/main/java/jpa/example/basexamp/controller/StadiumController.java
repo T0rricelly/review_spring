@@ -28,10 +28,7 @@ public class StadiumController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable Integer id) {
-        if (this.stadiumService.exist(id)) {
-            return ResponseEntity.ok(this.stadiumService.getById(id));
-        }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        return ResponseEntity.ok(this.stadiumService.getById(id));
     }
 
     @PostMapping
@@ -42,10 +39,7 @@ public class StadiumController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid StadiumDto stadiumDto) {
-        if (stadiumDto != null && this.stadiumService.exist(stadiumDto.getId())) {
-            return ResponseEntity.ok(this.stadiumService.update(id, stadiumDto));
-        }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        return ResponseEntity.ok(this.stadiumService.update(id, stadiumDto));
     }
 
     @DeleteMapping("/{id}")

@@ -12,4 +12,9 @@ spring:
     hibernate:
       ddl-auto: update
 
-
+  devtools:
+    restart:
+      enabled: true
+      trigger-file: .trigger-restart
+    livereload:
+      enabled: true

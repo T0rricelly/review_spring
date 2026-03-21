@@ -1,6 +1,7 @@
 package jpa.example.basexamp.service.impl;
 
 import jakarta.transaction.Transactional;
+import jpa.example.basexamp.advice.exceptions.ResourceNotFoundException;
 import jpa.example.basexamp.entity.CityStadium;
 import jpa.example.basexamp.repository.CityStadiumRepository;
 import jpa.example.basexamp.service.CityStadiumService;
@@ -30,7 +31,7 @@ public class CityStadiumServiceImp implements CityStadiumService {
 
     @Override
     public CityDto getById(Integer id) {
-        return this.cityMapper.toCityDto(this.cityStadiumRepository.findById(id).orElse(null));
+        return this.cityMapper.toCityDto(this.cityStadiumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro la ciudad con el id " + id)));
     }
 
     @Override

@@ -31,4 +31,5 @@ public class PlayerDto {
     @Size(max = 50)
     private String nationality;
 
+
 }

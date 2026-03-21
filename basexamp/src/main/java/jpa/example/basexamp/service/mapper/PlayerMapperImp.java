@@ -2,6 +2,8 @@ package jpa.example.basexamp.service.mapper;
 
 import jpa.example.basexamp.entity.Player;
 import jpa.example.basexamp.service.dto.PlayerDto;
+import jpa.example.basexamp.service.dto.StadiumDto;
+import jpa.example.basexamp.service.dto.TeamDto;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ public class PlayerMapperImp implements PlayerMapper{
         if (player == null){
             return null;
         }
+
 
         PlayerDto playerDto = new PlayerDto();
         playerDto.setId(player.getId());
