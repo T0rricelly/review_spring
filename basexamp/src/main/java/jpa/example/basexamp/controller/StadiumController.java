@@ -37,14 +37,14 @@ public class StadiumController {
 
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid StadiumDto stadiumDto) {
-        return ResponseEntity.ok(this.stadiumService.update(id, stadiumDto));
-    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid StadiumDto stadiumDto) {
+//        return ResponseEntity.ok(this.stadiumService.update(id, stadiumDto));
+//    }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteById(@PathVariable Integer id) {
-        return ResponseEntity.ok(this.stadiumService.deleteById(id));
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<?> deleteById(@PathVariable Integer id) {
+//        return ResponseEntity.ok(this.stadiumService.deleteById(id));
+//    }
 
 }

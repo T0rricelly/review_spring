@@ -2,15 +2,17 @@ package jpa.example.basexamp.service.mapper;
 
 import jpa.example.basexamp.entity.CityStadium;
 import jpa.example.basexamp.service.dto.CityDto;
+import org.mapstruct.Mapper;
 
 import java.util.List;
 
-public interface CityMapper {
-    CityStadium toCity(CityDto cityDto);
+@Mapper(componentModel = "spring")
+public interface CityMapper{
+    CityStadium toEntity(CityDto cityDto);
 
-    CityDto toCityDto(CityStadium cityStadium);
+    CityDto toDto(CityStadium cityStadium);
 
-    List<CityDto> toCityDtos(List<CityStadium> cityStadiums);
+    List<CityDto> toDtos(List<CityStadium> cityStadiums);
 
-    void updateCity(CityStadium cityStadium, CityDto cityDto);
+//    void updateCity(CityStadium cityStadium, CityDto cityDto);
 }

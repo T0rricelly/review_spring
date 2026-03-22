@@ -1,6 +1,7 @@
 package jpa.example.basexamp.service.dto;
 
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -24,5 +25,8 @@ public class StadiumDto {
 
     @Min(10000)
     private Integer quantity;
+
+    @Valid
+    private CityDto city;
 
 }

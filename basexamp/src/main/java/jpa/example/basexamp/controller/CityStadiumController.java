@@ -34,10 +34,10 @@ public class CityStadiumController {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.cityStadiumService.save(cityDto));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid CityDto cityDto) {
-        return ResponseEntity.ok(this.cityStadiumService.update(id, cityDto));
-    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid CityDto cityDto) {
+//        return ResponseEntity.ok(this.cityStadiumService.update(id, cityDto));
+//    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id){

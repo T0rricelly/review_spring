@@ -13,7 +13,7 @@ public interface PlayerService {
 
     PlayerDto save(PlayerDto playerDto);
 
-    PlayerDto update(Integer id, PlayerDto playerDto);
+//    PlayerDto update(Integer id, PlayerDto playerDto);
 
     PlayerDto delete(Integer id);
 

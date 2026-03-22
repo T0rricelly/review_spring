@@ -26,7 +26,7 @@ public class Stadium {
 
     @OneToOne(targetEntity = CityStadium.class)
     @JoinColumn(name = "id_city")
-    private CityStadium cityStadium;
+    private CityStadium city;
 
 
 }
