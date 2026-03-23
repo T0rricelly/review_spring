@@ -41,11 +41,11 @@ public class PlayerServiceImp implements PlayerService {
         return this.playerMapper.toPlayerDto(this.playerRepository.save(player));
     }
 
-//    public PlayerDto update(Integer id, PlayerDto playerDto) {
-//        Player player = this.playerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro el jugador con el id " + id ));
-//        this.playerMapper.updatePlayer(player, playerDto);
-//        return this.playerMapper.toPlayerDto(this.playerRepository.save(player));
-//    }
+    public PlayerDto update(Integer id,PlayerDto playerDto) {
+        Player player = this.playerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro el jugador con el id " + id ));
+        this.playerMapper.updatePlayer(player, playerDto);
+        return this.playerMapper.toPlayerDto(this.playerRepository.save(player));
+    }
 
     public PlayerDto delete(Integer id) {
         Player player = this.playerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro el jugador con el id " + id ));

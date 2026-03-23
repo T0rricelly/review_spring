@@ -1,6 +1,7 @@
 package jpa.example.basexamp.service.impl;
 
 import jakarta.transaction.Transactional;
+import jpa.example.basexamp.advice.exceptions.ResourceExists;
 import jpa.example.basexamp.advice.exceptions.ResourceNotFoundException;
 import jpa.example.basexamp.entity.Stadium;
 import jpa.example.basexamp.repository.StadiumRepository;
@@ -39,18 +40,18 @@ public class StadiumServiceImp implements StadiumService {
         return this.stadiumMapper.toStadiumDto(this.stadiumRepository.save(stadium));
     }
 
-//    @Override
-//    public StadiumDto update(Integer id, StadiumDto stadiumDto) {
-//        Stadium stadium = this.stadiumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro el estadio con el id " + id));
-//        this.stadiumMapper.updateStadium(stadium, stadiumDto);
-//        return this.stadiumMapper.toStadiumDto(this.stadiumRepository.save(stadium));
-//    }
+    @Override
+    public StadiumDto update(Integer id, StadiumDto stadiumDto) {
+        Stadium stadium = this.stadiumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro el estadio con el id " + id));
+        this.stadiumMapper.update(stadium, stadiumDto);
+        return this.stadiumMapper.toStadiumDto(this.stadiumRepository.save(stadium));
+    }
 
-//    @Override
-//    public StadiumDto deleteById(Integer id) {
-//        Stadium stadium = this.stadiumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro el estadio con el id " + id));
-//        StadiumDto stadiumDto = this.stadiumMapper.toStadiumDto(stadium);
-//        this.stadiumRepository.deleteById(id);
-//        return stadiumDto;
-//    }
+    @Override
+    public StadiumDto deleteById(Integer id) {
+        Stadium stadium = this.stadiumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro el estadio con el id " + id));
+        StadiumDto stadiumDto = this.stadiumMapper.toStadiumDto(stadium);
+        this.stadiumRepository.deleteById(id);
+        return stadiumDto;
+    }
 }

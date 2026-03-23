@@ -35,7 +35,8 @@ public class TeamController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid TeamDto teamDto) {
-        return ResponseEntity.ok().body(this.teamService.update(id, teamDto));
+        teamDto.setId(id);
+        return ResponseEntity.ok().body(this.teamService.update(id,teamDto));
     }
 
     @DeleteMapping("/{id}")

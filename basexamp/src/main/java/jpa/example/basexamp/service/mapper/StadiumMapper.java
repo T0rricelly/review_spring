@@ -4,6 +4,7 @@ import jpa.example.basexamp.entity.Stadium;
 import jpa.example.basexamp.service.dto.StadiumDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 
@@ -18,5 +19,7 @@ public interface StadiumMapper{
 
     List<StadiumDto> toStadiumDtos(List<Stadium> stadiumList);
 
-//    void updateStadium(Stadium stadium, StadiumDto stadiumDto);
+    @Mapping(source = "city", target = "city")
+    void update(@MappingTarget Stadium stadium, StadiumDto stadiumDto);
+
 }

@@ -36,13 +36,13 @@ public class TeamServiceImp implements TeamService {
     }
 
     public TeamDto update(Integer id, TeamDto teamDto) {
-        Team team = this.teamRepository.findById(id).orElse(null);
+        Team team = this.teamRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro un equipo con el id " + id));
         this.teamMapper.updateTeam(team,teamDto);
         return this.teamMapper.toTeamDto(this.teamRepository.save(team));
     }
 
     public TeamDto delete(Integer id){
-        Team team = this.teamRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro un jugador con el id " + id));
+        Team team = this.teamRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro un equipo con el id " + id));
         TeamDto teamDto = this.teamMapper.toTeamDto(team);
         this.teamRepository.deleteById(id);
         return teamDto;

@@ -2,6 +2,7 @@ package jpa.example.basexamp.service;
 
 import jpa.example.basexamp.repository.TeamRepository;
 import jpa.example.basexamp.service.dto.TeamDto;
+import org.mapstruct.Mapper;
 
 import java.util.List;
 

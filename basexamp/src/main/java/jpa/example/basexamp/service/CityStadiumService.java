@@ -12,7 +12,7 @@ public interface CityStadiumService {
 
     CityDto save(CityDto cityDto);
 
-//    CityDto update(Integer id, CityDto cityDto);
+    CityDto update(Integer id, CityDto cityDto);
 
     CityDto delete(Integer id);
 }

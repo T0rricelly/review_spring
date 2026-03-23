@@ -12,8 +12,8 @@ public interface StadiumService {
 
     StadiumDto save(StadiumDto stadiumDto);
 
-//    StadiumDto update(Integer id, StadiumDto stadiumDto);
+    StadiumDto update(Integer id, StadiumDto stadiumDto);
 
-//    StadiumDto deleteById(Integer id);
+    StadiumDto deleteById(Integer id);
 
 }

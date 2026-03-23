@@ -1,5 +1,6 @@
 package jpa.example.basexamp.service.dto;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -20,6 +21,8 @@ public class TeamDto {
     @NotBlank
     @Size(max = 30)
     private String nameTeam;
+    @Valid
+    private StadiumDto stadium;
 
 
 }

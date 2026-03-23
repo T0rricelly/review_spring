@@ -1,5 +1,6 @@
 package jpa.example.basexamp.advice;
 
+import jpa.example.basexamp.advice.exceptions.ResourceExists;
 import jpa.example.basexamp.advice.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +26,11 @@ public class GlobalErrorHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<String> notFound(ResourceNotFoundException exception){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+    }
+
+    @ExceptionHandler(ResourceExists.class)
+    public ResponseEntity<String> exists(ResourceExists exception){
+        return ResponseEntity.badRequest().body(exception.getMessage());
 
     }
 

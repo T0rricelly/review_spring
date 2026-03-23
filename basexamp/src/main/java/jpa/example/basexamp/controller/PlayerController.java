@@ -35,10 +35,10 @@ public class PlayerController {
 
     }
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid PlayerDto playerDto) {
-//        return ResponseEntity.ok(this.playerService.update(id, playerDto));
-//    }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody @Valid PlayerDto playerDto) {
+        return ResponseEntity.ok(this.playerService.update(id, playerDto));
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id) {

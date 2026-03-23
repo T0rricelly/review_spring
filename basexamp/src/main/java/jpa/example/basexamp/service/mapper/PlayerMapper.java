@@ -4,6 +4,7 @@ import jpa.example.basexamp.entity.Player;
 import jpa.example.basexamp.service.dto.PlayerDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 
@@ -22,5 +23,6 @@ public interface PlayerMapper {
     List<PlayerDto> toPlayerDtos(List<Player> players);
 
     // Actualizar Cliente
-//    void updatePlayer(Player player, PlayerDto playerDto);
+    @Mapping(source = "teamDto", target = "team")
+    void updatePlayer(@MappingTarget Player player, PlayerDto playerDto);
 }

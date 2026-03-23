@@ -41,12 +41,13 @@ public class CityStadiumServiceImp implements CityStadiumService {
         return this.cityMapper.toDto(this.cityStadiumRepository.save(city));
     }
 
-//    @Override
-//    public CityDto update(Integer id, CityDto cityDto) {
-//        CityStadium city = this.cityStadiumRepository.findById(id).orElse(null);
-//        this.cityMapper.updateCity(city, cityDto);
-//        return this.cityMapper.toCityDto(city);
-//    }
+    @Override
+    public CityDto update(Integer id, CityDto cityDto) {
+
+        CityStadium city = this.cityStadiumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro una ciudad con el id " + id));
+        this.cityMapper.update(city, cityDto);
+        return this.cityMapper.toDto(this.cityStadiumRepository.save(city));
+    }
 
     @Override
     public CityDto delete(Integer id) {
